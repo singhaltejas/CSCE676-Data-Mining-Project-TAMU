@@ -45,13 +45,5 @@ To view the analysis and results for Checkpoint 1:
 *   `Checkpoint_1/`: Directory containing the primary notebook, exploratory plots, and data copies.
 *   More coming as semester progresses
 
-## Contributing
-Contributions and feedback are welcome!
-1. **Fork** the repository.
-2. **Create a Feature Branch** (`git checkout -b feature/NewAnalysis`).
-3. **Commit Your Changes** (`git commit -m 'Add new analysis'`).
-4. **Push to the Branch** (`git push origin feature/NewAnalysis`).
-5. **Open a Pull Request**.
-
 ---
 *This project is part of the CSCE 676 course at Texas A&M University.*
