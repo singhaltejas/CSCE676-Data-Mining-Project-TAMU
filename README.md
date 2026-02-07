@@ -43,7 +43,7 @@ To view the analysis and results for Checkpoint 1:
 
 ## Repository Structure
 *   `Checkpoint_1/`: Directory containing the primary notebook, exploratory plots, and data copies.
-*   `.venv/`: Project virtual environment.
+*   More coming as semester progresses
 
 ## Contributing
 Contributions and feedback are welcome!
