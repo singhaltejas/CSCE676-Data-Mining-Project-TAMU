@@ -1,0 +1,8 @@
+pandas
+matplotlib
+seaborn
+openpyxl
+scipy
+mlxtend
+notebook
+ipykernel

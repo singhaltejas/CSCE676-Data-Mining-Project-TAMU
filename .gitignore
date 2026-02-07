@@ -1,8 +1,29 @@
+# Environments
 .venv/
+env/
+venv/
+ENV/
+
+# Python
 __pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Data and Large Files
 *.xlsx
-*.log
-.DS_Store
-GEMINI.md
+*.csv
+*.gz
+*.zip
+
+# Project Specific
 copies/
+Checkpoint_1/copies/
 Project Checkpoint 1.md
+
+# OS
+.DS_Store
+Thumbs.db

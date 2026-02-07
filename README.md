@@ -1,43 +1,57 @@
-# CSCE 676: Data Mining - Online Retail Transaction Analysis
+# Online Retail Analysis: Frequent Itemset & Sequential Pattern Mining
+*A CSCE 676 (Data Mining) Project at Texas A&M University*
 
-**Submitted by:** Tejas Singhal  
-**UIN:** 836000009
+**Author:** Tejas Singhal (UIN: 836000009)
 
-This repository contains the project work for CSCE 676 (Data Mining). The project focuses on analyzing customer purchasing patterns using a large-scale retail dataset to uncover association rules and temporal purchasing sequences.
+## Overview
+This repository contains a comprehensive data mining project focused on the **Online Retail II** dataset. The goal is to identify hidden customer purchasing patterns through association rules and temporal sequences, enabling better inventory management and targeted marketing strategies.
 
-## Project Overview
-The goal of this project is to apply data mining techniques to identify how products are co-purchased and to predict future purchasing behavior based on historical sequences.
+Key metrics and techniques include:
+*   **Word-Level Metrics (for Rules):** Support, Confidence, Lift.
+*   **Temporal Patterns:** Sequential Pattern Mining to track customer acquisition over time.
 
-### Dataset
-*   **Name:** Online Retail II Dataset
-*   **Source:** [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/502/online+retail+ii)
-*   **Size:** ~1 million transactions (2009-2011)
-*   **Key Features:** Invoice ID, Stock Code, Description, Quantity, Invoice Date, Unit Price, Customer ID, and Country.
+## Key Features
+*   **Market Basket Analysis:** Utilizing Apriori and FP-Growth to find co-purchased items.
+*   **Sequential Pattern Mining:** Implementing PrefixSpan to analyze temporal order of purchases.
+*   **Data Cleaning Pipeline:** Automated handling of missing customer IDs and transaction cancellations.
+*   **Interactive Visualizations:** Deep dives into seasonality and basket distributions.
 
-## Current Progress: Checkpoint 1
-In the first phase of this project, I performed:
-1.  **Dataset Comparison:** Evaluated three candidate datasets (Retail, Amazon Reviews, and Twitch Social Networks) based on algorithmic feasibility, data quality, and ethical considerations.
-2.  **Dataset Selection:** Selected the Online Retail II dataset due to its high compatibility with course topics like Frequent Itemset Mining.
-3.  **Exploratory Data Analysis (EDA):**
-    *   Cleaned the data by handling missing Customer IDs and removing transaction cancellations.
-    *   Analyzed basket size distributions to inform future support thresholds.
-    *   Identified seasonal peaks in transactions (Nov-Dec), justifying a deeper look into holiday-specific purchasing rules.
+## Installation
+To set up the project locally, clone the repository and install the dependencies in a virtual environment:
 
-## Data Mining Techniques
-*   **Course Techniques:** Frequent Itemset Mining, Association Rules (Apriori/FP-Growth).
-*   **Beyond-Course Techniques:** Sequential Pattern Mining (PrefixSpan) to analyze the temporal order of customer acquisitions.
+```bash
+git clone https://github.com/singhaltejas/CSCE676-Data-Mining-Project-TAMU.git
+cd CSCE676-Data-Mining-Project-TAMU
+python3 -m venv .venv
+source .venv/bin/activate  # On Windows use `.venv\Scripts\activate`
+pip install -r requirements.txt
+```
+*(Note: If requirements.txt is missing, install: pandas matplotlib seaborn openpyxl scipy mlxtend)*
+
+## Quick Start
+To view the analysis and results for Checkpoint 1:
+1. Ensure the dataset `online_retail_II.xlsx` is in the root directory.
+2. Launch Jupyter Notebook or Lab:
+   ```bash
+   jupyter notebook Checkpoint_1/Project_Checkpoint_1.ipynb
+   ```
+
+## Example Insights
+### Monthly Transaction Volume
+![Monthly Trends](Checkpoint_1/Monthly%20Transaction%20Trends%20(2009%20-%202011).png)
+*Example plot showing the significant seasonality with peaks in November and December.*
 
 ## Repository Structure
-*   `Project_Checkpoint_1.ipynb`: Full Python notebook containing data cleaning, visualizations, and selection justification.
-*   `GEMINI.md`: Contextual documentation for the project environment.
+*   `Checkpoint_1/`: Directory containing the primary notebook, exploratory plots, and data copies.
+*   `.venv/`: Project virtual environment.
 
-## Requirements
-To run the notebook, you will need:
-*   Python 3.10+
-*   `pandas`
-*   `matplotlib`
-*   `seaborn`
-*   `openpyxl` (for loading the original Excel dataset)
+## Contributing
+Contributions and feedback are welcome!
+1. **Fork** the repository.
+2. **Create a Feature Branch** (`git checkout -b feature/NewAnalysis`).
+3. **Commit Your Changes** (`git commit -m 'Add new analysis'`).
+4. **Push to the Branch** (`git push origin feature/NewAnalysis`).
+5. **Open a Pull Request**.
 
 ---
 *This project is part of the CSCE 676 course at Texas A&M University.*
