@@ -22,11 +22,10 @@ __pycache__/
 # Project Specific
 copies/
 Checkpoint_1/copies/
+GEMINI.md
+gemini.md
 Project Checkpoint 1.md
 
 # OS
 .DS_Store
 Thumbs.db
-
-# Other
-GEMINI.md
