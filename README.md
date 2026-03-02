@@ -3,20 +3,24 @@
 
 **Author:** Tejas Singhal (UIN: 836000009)
 
-## Overview
+## Project Overview
 This repository contains a comprehensive data mining project focused on the **Online Retail II** dataset. The goal is to identify hidden customer purchasing patterns through association rules and temporal sequences, enabling better inventory management and targeted marketing strategies.
 
-Key metrics and techniques include:
-*   **Word-Level Metrics (for Rules):** Support, Confidence, Lift.
-*   **Temporal Patterns:** Sequential Pattern Mining to track customer acquisition over time.
+### Current Progress: Checkpoint 2 Complete
+I have defined the core research questions and verified the feasibility of the proposed methodologies, including both course-standard and external data mining techniques.
 
-## Key Features
-*   **Market Basket Analysis:** Utilizing Apriori and FP-Growth to find co-purchased items.
-*   **Sequential Pattern Mining:** Implementing PrefixSpan to analyze temporal order of purchases.
-*   **Data Cleaning Pipeline:** Automated handling of missing customer IDs and transaction cancellations.
-*   **Interactive Visualizations:** Deep dives into seasonality and basket distributions.
+## Key Research Questions
+*   **RQ1 (Course):** How do different support thresholds impact the number and quality of frequent itemsets discovered?
+*   **RQ2 (Course):** How does 'confidence' compare to 'lift' when evaluating the business value of association rules?
+*   **RQ3 (External):** Do sequential patterns (PrefixSpan) reveal temporal buying structures that are missed by traditional, unordered itemset mining?
 
-## Installation
+## Key Features & Insights
+*   **Market Basket Analysis:** Utilizing **FP-Growth** and **Apriori** to find co-purchased items.
+*   **Sequential Pattern Mining:** Implementing **PrefixSpan** to analyze the temporal order of purchases over multiple customer visits.
+*   **Data Cleaning Pipeline:** Automated handling of missing customer IDs and transaction cancellations. I confirmed through actual data execution that **72.35%** of the unique customers (4,255 out of 5,881) are repeat purchasers, making sequential mining highly feasible.
+*   **Interactive Visualizations:** Deep dives into seasonality (peaks in Nov-Dec) and basket size distributions.
+
+## Installation & Setup
 To set up the project locally, clone the repository and install the dependencies in a virtual environment:
 
 ```bash
@@ -26,24 +30,21 @@ python3 -m venv .venv
 source .venv/bin/activate  # On Windows use `.venv\Scripts\activate`
 pip install -r requirements.txt
 ```
-*(Note: If requirements.txt is missing, install: pandas matplotlib seaborn openpyxl scipy mlxtend)*
-
-## Quick Start
-To view the analysis and results for Checkpoint 1:
-1. Ensure the dataset `online_retail_II.xlsx` is in the root directory.
-2. Launch Jupyter Notebook or Lab:
-   ```bash
-   jupyter notebook Checkpoint_1/Project_Checkpoint_1.ipynb
-   ```
-
-## Example Insights
-### Monthly Transaction Volume
-![Monthly Trends](Checkpoint_1/Monthly%20Transaction%20Trends%20(2009%20-%202011).png)
-*Example plot showing the significant seasonality with peaks in November and December.*
 
 ## Repository Structure
-*   `Checkpoint_1/`: Directory containing the primary notebook, exploratory plots, and data copies.
-*   More coming as semester progresses
+*   **Checkpoint 1/**: Initial EDA, dataset selection, and baseline cleaning pipeline.
+*   **Checkpoint 2/**: Research Question formation, methodological planning, and feasibility analysis.
+*   **.venv/**: Project virtual environment (Ignored by Git).
+*   **requirements.txt**: Central project dependencies.
+*   **README.md**: Central project documentation (this file).
+
+## Quick Start
+To view the analysis for the latest checkpoint:
+1. Ensure the dataset `online_retail_II.xlsx` is located in the `Checkpoint 1/` directory.
+2. Launch Jupyter:
+   ```bash
+   jupyter notebook "Checkpoint 2/836000009_checkpoint_2.ipynb"
+   ```
 
 ---
 *This project is part of the CSCE 676 course at Texas A&M University.*

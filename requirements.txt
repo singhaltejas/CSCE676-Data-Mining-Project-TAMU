@@ -4,5 +4,6 @@ seaborn
 openpyxl
 scipy
 mlxtend
+prefixspan
 notebook
 ipykernel

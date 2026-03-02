@@ -1,31 +1,25 @@
-# Environments
+# Virtual environment
 .venv/
 env/
 venv/
 ENV/
 
-# Python
+# Python cache
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Jupyter Notebook
-.ipynb_checkpoints/
-*/.ipynb_checkpoints/
+# IDEs/Editors
+.vscode/
+.idea/
+*.swp
+*.swo
 
-# Data and Large Files
-*.xlsx
-*.csv
-*.gz
-*.zip
-
-# Project Specific
-copies/
-Checkpoint_1/copies/
-GEMINI.md
-gemini.md
-Project Checkpoint 1.md
-
-# OS
+# OS files
 .DS_Store
 Thumbs.db
+
+# Data files (Datasets usually too large for git)
+*.xlsx
+*.csv
+*.zip
