@@ -10,9 +10,9 @@ This repository contains a comprehensive data mining project focused on the **On
 I have defined the core research questions and verified the feasibility of the proposed methodologies, including both course-standard and external data mining techniques.
 
 ## Key Research Questions
-*   **RQ1 (Course):** How do different support thresholds impact the number and quality of frequent itemsets discovered?
-*   **RQ2 (Course):** How does 'confidence' compare to 'lift' when evaluating the business value of association rules?
-*   **RQ3 (External):** Do sequential patterns (PrefixSpan) reveal temporal buying structures that are missed by traditional, unordered itemset mining?
+*   **RQ1 (Course):** Do frequent itemsets and association rules differ meaningfully between the holiday peak season (Nov–Dec) and the rest of the year?
+*   **RQ2 (Course):** Given the extreme long-tail item distribution, does ranking rules by lift surface more actionable cross-sell opportunities than confidence?
+*   **RQ3 (External):** Among repeat customers, do sequential patterns (PrefixSpan) reveal temporal buying progressions invisible to unordered itemset mining?
 
 ## Key Features & Insights
 *   **Market Basket Analysis:** Utilizing **FP-Growth** and **Apriori** to find co-purchased items.
@@ -32,18 +32,17 @@ pip install -r requirements.txt
 ```
 
 ## Repository Structure
-*   **Checkpoint 1/**: Initial EDA, dataset selection, and baseline cleaning pipeline.
-*   **Checkpoint 2/**: Research Question formation, methodological planning, and feasibility analysis.
-*   **.venv/**: Project virtual environment (Ignored by Git).
+*   **Checkpoint_1/**: Initial EDA, dataset selection, and baseline cleaning pipeline.
+*   **Checkpoint_2/**: Research question formation, dataset-specific EDA, methodological planning, and real-data proof-of-concept runs.
 *   **requirements.txt**: Central project dependencies.
 *   **README.md**: Central project documentation (this file).
 
 ## Quick Start
 To view the analysis for the latest checkpoint:
-1. Ensure the dataset `online_retail_II.xlsx` is located in the `Checkpoint 1/` directory.
+1. Ensure the dataset `online_retail_II.xlsx` is located in the `Checkpoint_1/` directory.
 2. Launch Jupyter:
    ```bash
-   jupyter notebook "Checkpoint 2/836000009_checkpoint_2.ipynb"
+   jupyter notebook "Checkpoint_2/836000009_checkpoint_2.ipynb"
    ```
 
 ---
