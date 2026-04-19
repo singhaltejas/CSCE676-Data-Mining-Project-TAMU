@@ -23,3 +23,12 @@ Thumbs.db
 *.xlsx
 *.csv
 *.zip
+
+# Claude Code internal files
+.claude/
+
+# Presentation and video assets (submitted separately)
+2 Minute Video/
+AI Phone Interview/
+CSCE676_Presentation_with_notes.pptx
+Final Deliverable.md

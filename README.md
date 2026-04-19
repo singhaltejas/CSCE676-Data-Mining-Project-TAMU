@@ -1,49 +1,76 @@
-# Online Retail Analysis: Frequent Itemset & Sequential Pattern Mining
-*A CSCE 676 (Data Mining) Project at Texas A&M University*
+# Sequential vs. Unordered Mining: Discovering Temporal Purchase Progressions in Online Retail
 
+*CSCE 676 — Data Mining · Texas A&M University*  
 **Author:** Tejas Singhal (UIN: 836000009)
 
-## Project Overview
-This repository contains a comprehensive data mining project focused on the **Online Retail II** dataset. The goal is to identify hidden customer purchasing patterns through association rules and temporal sequences, enabling better inventory management and targeted marketing strategies.
+---
 
-### Current Progress: Checkpoint 2 Complete
-I have defined the core research questions and verified the feasibility of the proposed methodologies, including both course-standard and external data mining techniques.
+## Overview
 
-## Key Research Questions
-*   **RQ1 (Course):** Do frequent itemsets and association rules differ meaningfully between the holiday peak season (Nov–Dec) and the rest of the year?
-*   **RQ2 (Course):** Given the extreme long-tail item distribution, does ranking rules by lift surface more actionable cross-sell opportunities than confidence?
-*   **RQ3 (External):** Among repeat customers, do sequential patterns (PrefixSpan) reveal temporal buying progressions invisible to unordered itemset mining?
+This project investigates whether **PrefixSpan sequential pattern mining** surfaces temporal purchase progressions among repeat customers that **FP-Growth basket analysis** is structurally incapable of finding. Using the UCI Online Retail II dataset (805,620 transactions, 5,881 customers, 2009–2011), we show that the two algorithms ask fundamentally different questions from the same data — and find fundamentally different patterns.
 
-## Key Features & Insights
-*   **Market Basket Analysis:** Utilizing **FP-Growth** and **Apriori** to find co-purchased items.
-*   **Sequential Pattern Mining:** Implementing **PrefixSpan** to analyze the temporal order of purchases over multiple customer visits.
-*   **Data Cleaning Pipeline:** Automated handling of missing customer IDs and transaction cancellations. I confirmed through actual data execution that **72.35%** of the unique customers (4,255 out of 5,881) are repeat purchasers, making sequential mining highly feasible.
-*   **Interactive Visualizations:** Deep dives into seasonality (peaks in Nov-Dec) and basket size distributions.
+**Key finding:** 81% of sequential patterns have no basket analysis counterpart at any tested support threshold. 13 of 23 cross-item progression patterns are sequentially discovered only, with median customer return gaps of 131–206 days.
 
-## Installation & Setup
-To set up the project locally, clone the repository and install the dependencies in a virtual environment:
+---
+
+## Final Notebook
+
+| | |
+|---|---|
+| **View (no install needed)** | [Open in nbviewer](https://nbviewer.org/github/singhaltejas/CSCE676-Data-Mining-Project-TAMU/blob/main/Final/836000009_final.ipynb) |
+| **Run locally** | `Final/836000009_final.ipynb` |
+
+---
+
+## Research Question
+
+> Do PrefixSpan sequential patterns reveal temporal buying progressions among repeat customers that are invisible to FP-Growth basket analysis?
+
+**Answer:** Yes. Of the 54 length-2 sequential patterns PrefixSpan finds (minsup=20 customers), **44 (81%) have no corresponding frequent itemset in FP-Growth** at any tested support threshold (1%–5%). Among the 23 cross-item progressions, 13 (57%) are sequentially discovered only — item pairs bought across separate visits months apart that basket analysis cannot mine regardless of threshold.
+
+---
+
+## Setup
+
+**Requirements:** Python 3.8+
 
 ```bash
 git clone https://github.com/singhaltejas/CSCE676-Data-Mining-Project-TAMU.git
 cd CSCE676-Data-Mining-Project-TAMU
 python3 -m venv .venv
-source .venv/bin/activate  # On Windows use `.venv\Scripts\activate`
+source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## Repository Structure
-*   **Checkpoint_1/**: Initial EDA, dataset selection, and baseline cleaning pipeline.
-*   **Checkpoint_2/**: Research question formation, dataset-specific EDA, methodological planning, and real-data proof-of-concept runs.
-*   **requirements.txt**: Central project dependencies.
-*   **README.md**: Central project documentation (this file).
+**Dataset:** Download `online_retail_II.xlsx` from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/502/online+retail+ii) and place it in `Checkpoint_1/`.
 
-## Quick Start
-To view the analysis for the latest checkpoint:
-1. Ensure the dataset `online_retail_II.xlsx` is located in the `Checkpoint_1/` directory.
-2. Launch Jupyter:
-   ```bash
-   jupyter notebook "Checkpoint_2/836000009_checkpoint_2.ipynb"
-   ```
+Then launch the final notebook:
+
+```bash
+jupyter notebook Final/836000009_final.ipynb
+```
 
 ---
-*This project is part of the CSCE 676 course at Texas A&M University.*
+
+## Repository Structure
+
+| Folder / File | Contents |
+|---|---|
+| `Final/836000009_final.ipynb` | **Primary deliverable** — complete analysis notebook |
+| `Final/*.png` | Figures saved by the notebook |
+| `Checkpoint_1/` | Initial EDA, dataset location, baseline cleaning pipeline |
+| `Checkpoint_2/` | Research question formation, methodology proof-of-concept |
+| `requirements.txt` | Project dependencies |
+
+---
+
+## Techniques Used
+
+| Technique | Type | Library |
+|---|---|---|
+| FP-Growth + Association Rules | Course standard | `mlxtend` |
+| PrefixSpan Sequential Mining | External (beyond course) | `prefixspan` |
+
+---
+
+*CSCE 676 · Texas A&M University*
